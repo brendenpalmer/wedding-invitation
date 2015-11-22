@@ -23,8 +23,8 @@ gulp.task('clean:tmp', function () {
 gulp.task('usemin', function() {
     return gulp.src('app/index.html')
         .pipe(usemin({
-            css: [ rev() ],
-            vendorcss: [ rev() ],
+            css: [ rev(), minifyCss() ],
+            vendorcss: [ rev(), minifyCss() ],
             html: [ minifyHtml({ empty: true }) ],
             js: [ ngAnnotate(), uglify(), rev() ],
             vendorjs: [ uglify(), rev() ],
