@@ -1,6 +1,6 @@
 <div class="code">
     <div class="outer-code-input ring-bg">
-        <div ng-if="code.isIE() === false" class="outer-styled-input">
+        <div ng-if="::code.isIE() === false" class="outer-styled-input">
             <form method="post" name="submitCodeForm" ng-submit="code.submitCode(submitCodeForm.$valid)" novalidate>
                 <input
                     autofocus
