@@ -1,5 +1,5 @@
 # wedding-invitation
-A web application to use for wedding invitations.
+The front-end of the app to use for wedding invitations.
 
 Demo: http://wedding.brendenpalmer.com
 
