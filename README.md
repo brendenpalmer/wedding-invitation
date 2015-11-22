@@ -12,3 +12,5 @@ Codes for demo:
 - thatcode
 - thiscode
 - yourcode
+
+Note that every time you login with one of these codes the RSVP selection will be reset for that particular guest. This only happens for the demo version of the app.
