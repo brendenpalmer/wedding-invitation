@@ -1,0 +1,15 @@
+//Author: Brenden Palmer
+
+a, a:hover, a:visited, a:active {
+    text-decoration: none;
+    color: $gold-color;
+    cursor: pointer;
+    transition: border $default-transition-duration ease;
+    border-bottom: 2px solid transparent;
+}
+
+a {
+    &:hover {
+        border-color: $gold-color;
+    }
+}

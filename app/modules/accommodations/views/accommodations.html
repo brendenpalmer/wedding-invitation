@@ -1,0 +1,35 @@
+<div class="accommodations main-content-area">
+    <h3 class="text-align-center">Accommodations</h3>
+
+    <div class="text-container text-align-center">
+        <p>We offer a selection of guest rooms.</p>
+        <p class="smaller-text">Phone: 555.555.5555<br>Email: <a href="mailto:hello@brendenpalmer.com">hello@brendenpalmer.com</a></p>
+
+        <div class="flex border-radius-sm paper-card-container text-align-center paper-card landscape">
+            <div class="paper-card-content">
+                <table class="border-radius-sm">
+                    <thead>
+                        <tr>
+                            <th ng-repeat="heading in ::accommodations.headingOptions track by $index">
+                                {{ ::heading }}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="room in ::accommodations.availableAccommodations.rooms track by $index">
+                            <td>{{ ::room.roomType }}</td>
+                            <td>{{ ::room.price }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h4 class="text-align-center">Notes</h4>
+
+        <ol class="text-align-left">
+            <li>The above rooms are available on a first-come, first-served basis.</li>
+            <li>Some other note(s) here</li>
+        </ol>
+    </div>
+</div>

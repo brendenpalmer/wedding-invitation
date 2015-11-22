@@ -1,0 +1,36 @@
+//Author: Brenden Palmer
+
+.accommodations {
+    h3 {
+        margin-bottom: 1em;
+    }
+
+    table {
+        flex: none;
+        max-width: 100%;
+        margin: 1.5em auto;
+        border: none;
+        thead,
+        tbody {
+            max-width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 380px) {
+        th,
+        tr {
+            padding-left: .15em;
+            padding-right: .15em;
+        }
+    }
+
+    ol {
+        width: 100%;
+    }
+
+    .paper-card-container {
+        margin: 1.5em auto 1.5em;
+        width: 100%;
+        max-width: 100%;
+    }
+}

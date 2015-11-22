@@ -1,0 +1,20 @@
+<div ng-show="menu.user.isDinnerGuest()" class="menu main-content-area">
+    <div class="menu-info-text">
+        <h3 class="text-align-center">Please select your choice of entrée below:</h3>
+        <p class="smaller-text text-align-center">(click on an entrée to select it)</p>
+        <p class="smaller-text text-align-right">
+            <a href="javascript:void(0)" ng-click="menu.view.modalOpen = true">More information</a>
+        </p>
+    </div>
+
+    <reception-menu
+        entrees="menu.entrees.options"
+        user-selected-entree="menu.entrees.selected"
+        entree-selected-callback="menu.entreeSelected"
+    ></reception-menu>
+
+    <modal modal-open="menu.view.modalOpen">
+        <p class="text-align-center">We can't guarantee we'll have your selected menu option available unless you select it before sometime in 2017.</p>
+        <p class="text-align-center smaller-text">You can change your mind as much as you'd like until then.</p>
+    </modal>
+</div>

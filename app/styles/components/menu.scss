@@ -1,0 +1,199 @@
+//Author: Brenden Palmer
+//Background pattern from subtlepatterns.com
+
+$menu-column-height: 650px;
+$menu-column-height-small-screen: 775px;
+$menu-transition-duration: .7s;
+
+.folding-menu-container {
+    @extend .paper-card-container;
+
+    position: relative;
+    margin: 2em auto;
+    perspective: 2000px;
+
+    &.menu-opened {
+        .menu-left {
+            transform: rotateY(-180deg);
+            transition-delay: 0s;
+        }
+
+        .menu-right {
+            transform: rotateY(180deg);
+            transition-delay: .33 * $menu-transition-duration;
+        }
+    }
+
+    .close-icon {
+        position: absolute;
+        top: -2em;
+        right: -100%;
+        z-index: $z-index-2;
+    }
+
+    .menu-center {
+        width: 100%;
+        height: 100%;
+    }
+
+    .menu-center,
+    .menu-left,
+    .menu-right,
+    .menu-front,
+    .menu-back {
+        @extend .paper-card;
+        height: $menu-column-height;
+    }
+
+    .menu-left {
+        backface-visibility: hidden;
+    }
+
+    .menu-front,
+    .menu-back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        backface-visibility: hidden;
+    }
+
+    .menu-back {
+        transform: rotateY(-180deg);
+        background: inherit;
+        z-index: 2;
+    }
+
+    .menu-left,
+    .menu-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transform-style: preserve-3d;
+        transition: transform $menu-transition-duration ease;
+        perspective: 800px;
+    }
+
+    .menu-front {
+        h1 {
+            padding-bottom: 1em;
+            border-bottom: 4px double $gold-color;
+        }
+    }
+
+    .menu-left {
+        transform-origin: 0 50%;
+        transition-delay: .33 * $menu-transition-duration;
+        z-index: $z-index-3;
+    }
+
+    .menu-right {
+        transform-origin: 100% 50%;
+        z-index: $z-index-2;
+    }
+
+    .menu-content {
+        @extend .paper-card-content;
+    }
+
+    ul {
+        text-align: center;
+
+        li {
+            display: block;
+            width: 95%;
+            font-size: .85em;
+            margin: 1em auto;
+            padding: .25em;
+            border: 1px solid transparent;
+
+            &:first-of-type {
+                margin: 0 auto 1em;
+            }
+
+            &:last-of-type {
+                margin: 1em auto 0;
+            }
+
+            &.selectable-option {
+                transition: background $default-transition-duration ease;
+                backface-visibility: hidden;
+                border-radius: .15em;
+                padding: .5em;
+
+                &:not(.menu-item-selected) {
+                    cursor: pointer;
+
+                    &:hover {
+                        background: rgba(0, 0, 0, .07);
+                    }
+                }
+
+                &.menu-item-selected {
+                    color: $green-color;
+                }
+            }
+
+            > h4 {
+                margin-bottom: .5em;
+            }
+        }
+    }
+
+    @media screen and (max-width: 968px) {
+        width: 50%;
+        max-width: 50%;
+
+        .close-icon {
+            display: none;
+        }
+
+        .menu-center,
+        .menu-left,
+        .menu-right {
+            display: block;
+            position: static;
+            transform: none;
+
+            &:not(:first-of-type):not(:last-of-type) {
+                margin: 1.5em auto;
+            }
+
+            .menu-front,
+            .menu-back {
+                transform: none;
+            }
+        }
+
+        &.menu-opened {
+            .menu-center,
+            .menu-left,
+            .menu-right,
+            .menu-front,
+            .menu-back {
+                transform: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    @media screen and (max-width: 468px) {
+        width: 95%;
+        max-width: 95%;
+
+        .menu-center,
+        .menu-left,
+        .menu-right,
+        .menu-front,
+        .menu-back {
+            height: $menu-column-height-small-screen;
+        }
+    }
+}

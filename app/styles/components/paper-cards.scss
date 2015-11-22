@@ -1,0 +1,53 @@
+//Author: Brenden Palmer
+
+$paper-card-height: 650px;
+
+.paper-card-container {
+    width: 33%;
+    max-width: 500px;
+
+    @media screen and (max-width: 968px) {
+        width: 50%;
+        max-width: 50%;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 90%;
+        max-width: 90%;
+    }
+}
+
+.paper-card {
+    padding: 1em;
+    background: #efefef url('/images/blizzard.png') repeat;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+    height: $paper-card-height;
+
+    &.landscape {
+        height: auto;
+    }
+}
+
+.paper-card-content {
+    width: 96%;
+    margin: 2% auto 0;
+    height: 96%;
+    border: 4px double $gold-color;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.paper-card-heading {
+    text-align: center;
+    font-size: 1.35em;
+    padding-bottom: .5em;
+    margin-bottom: .5em;
+    border-bottom: 4px double $gold-color;
+
+    &:not(:first-of-type) {
+        margin-top: 1em;
+    }
+}

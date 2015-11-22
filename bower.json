@@ -1,0 +1,15 @@
+{
+  "name": "reception",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "^1.4.7",
+    "angular-animate": "^1.4.7",
+    "angular-sanitize": "^1.4.7",
+    "angular-ui-router": "0.2.15",
+    "angular-mocks": "^1.4.7",
+    "jquery": "~2.0.0",
+    "normalize.css": "^3.0.3",
+    "font-awesome": "^4.4.0"
+  },
+  "private": true
+}

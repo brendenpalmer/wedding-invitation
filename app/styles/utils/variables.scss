@@ -1,0 +1,20 @@
+//Author: Brenden Palmer
+
+//DEFAULTS
+$default-bg-color: #EAEAEA;
+$default-font-size: 18px;
+$default-transition-duration: .2s;
+$default-color: #000;
+
+//COLORS
+$gold-color: #b99867;
+$white-color: #efefef;
+$error-color: #e74c3c;
+$green-color: #009C29;
+$black-color: rgba(0, 0, 0, .9);
+
+//NAV
+$main-nav-bg-color: $black-color;
+
+//MODAL
+$modal-bg-color: transparentize($gold-color, .1);

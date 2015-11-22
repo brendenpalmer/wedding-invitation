@@ -1,0 +1,33 @@
+<div class="code">
+    <div class="outer-code-input ring-bg">
+        <div ng-if="code.isIE() === false" class="outer-styled-input">
+            <form method="post" name="submitCodeForm" ng-submit="code.submitCode(submitCodeForm.$valid)" novalidate>
+                <input
+                    autofocus
+                    spellcheck="false"
+                    autocomplete="off"
+                    placeholder="Enter your code..."
+                    id="code-input"
+                    type="text"
+                    ng-pattern="/^[a-zA-Z0-9]{8}$/"
+                    ng-minlength="8"
+                    ng-maxlength="8"
+                    ng-model="code.view.userCode"
+                    name="submitCode"
+                    class="styled-input inline-block"
+                ><input type="submit" class="button inline-block" value="submit">
+                <p ng-if="code.view.codeError === true" class="text-align-right smaller-text">Sorry, your code wasn't right. Try again.</p>
+                <p class="text-align-right smaller-text">Your code must be 8 characters in length and contain only numbers and letters.</p>
+                <p class="text-align-right smaller-text"><a ng-click="code.view.moreInfoOpen = true">More Information</a></p>
+            </form>
+        </div>
+        <div ng-if="::code.isIE() === true">
+            <h2 class="text-align-center">Best viewed in Chrome.</h2>
+            <p class="text-align-center"><a target="_blank" href="https://www.google.com/chrome/browser/desktop/">Download Chrome Here</a></p>
+        </div>
+    </div>
+</div>
+<modal ng-if="::code.isIE() === false" modal-open="code.view.moreInfoOpen">
+    <p class="text-align-center">Your code acts as your login to this site, so please retain it somewhere safe.</p>
+    <p class="text-align-center smaller-text">If you lose your code, or you believe it may be compromised, please contact us.</p>
+</modal>

@@ -1,0 +1,79 @@
+<div class="invite main-content-area">
+    <div class="relative">
+        <h2>
+            <span class="block gold-color groom-name">{{ ::invite.groomName }}</span>
+            <span class="outer-and-symbol-bride">
+                <span class="gold-color smaller-text inline-block styled-and-symbol">&</span>
+                <span class="inline-block bride-text bride-name">{{ ::invite.brideName }}</span>
+            </span>
+        </h2>
+
+        <span class="year-bg">
+            <span>{{ ::invite.yearOfWedding }}</span>
+        </span>
+    </div>
+
+    <h3>{{ ::invite.weddingLocation }}</h3>
+
+    <div ng-if="invite.user.inviteDescription.length && invite.user.rsvp === null">
+        <div class="flex border-radius-sm paper-card-container text-align-center paper-card">
+            <div class="paper-card-content" ng-bind-html="invite.user.inviteDescription"></div>
+        </div>
+    </div>
+
+    <div ng-if="invite.user.inviteDescription.length && invite.user.rsvp === 1">
+        <p class="text-container invite-wording">
+            {{ ::invite.acceptedText }}
+        </p>
+
+        <div class="m-t-xl m-b-xl text-align-center">
+            <div class="flex border-radius-sm paper-card-container text-align-center paper-card landscape">
+                <div class="paper-card-content">
+                    <h1 class="paper-card-heading">Timeline</h1>
+                    <ul>
+                        <li ng-repeat="event in invite.user.eventCollection.events track by $index">{{ event }}</li>
+                        <li class="m-t"><strong>Attire:</strong> semi-formal</li>
+                        <li class="m-t smaller-text italic">cash bar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-align-center">
+            <a ng-click="invite.view.viewInviteOpen = true">View Invitation</a>
+        </p>
+    </div>
+
+    <div ng-if="invite.user.inviteDescription.length && invite.user.rsvp === 0">
+        <p class="text-container invite-wording">
+            {{ ::invite.declinedText }}
+        </p>
+    </div>
+
+    <p class="h1 text-align-center gold-color b-c-text">b&c</p>
+
+    <div class="outer-rsvp">
+        <div
+            class="button error"
+            ng-click="invite.decline()"
+            ng-class="{
+                'button-selected': invite.user.rsvp === 0
+            }"
+        >
+            {{ invite.user.rsvp === 0 ? 'Declined' : 'Decline' }}
+        </div>
+        <div
+            class="button"
+            ng-click="invite.accept()"
+            ng-class="{
+                'button-selected': invite.user.rsvp === 1
+            }"
+        >
+            {{ invite.user.rsvp === 1 ? 'Accepted' : 'Accept' }}
+        </div>
+    </div>
+</div>
+
+<modal modal-open="invite.view.viewInviteOpen">
+    <p class="text-container text-align-center invite-wording normal-width" ng-bind-html="invite.user.inviteDescription"></p>
+</modal>

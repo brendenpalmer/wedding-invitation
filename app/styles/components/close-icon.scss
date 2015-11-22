@@ -1,0 +1,53 @@
+//Author: Brenden Palmer
+
+$close-icon-width: 30px;
+$close-icon-height: 2px;
+$close-icon-larger-width: 40px;
+$close-icon-larger-height: 3px;
+
+.close-icon {
+    width: $close-icon-width;
+    height: $close-icon-width;
+    cursor: pointer;
+
+    &.larger {
+        width: $close-icon-larger-width;
+        height: $close-icon-larger-width;
+
+        > .inner-close-icon {
+            height: $close-icon-larger-height;
+            top: 1em;
+
+            &:after {
+                width: $close-icon-larger-width;
+                height: $close-icon-larger-height;
+            }
+        }
+    }
+
+    > .inner-close-icon {
+        width: 100%;
+        height: $close-icon-height;
+        transform: rotate(45deg);
+        background: $gold-color;
+        position: relative;
+        transition: transform $default-transition-duration ease;
+        backface-visibility: hidden;
+        top: .8em;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: $close-icon-width;
+            height: $close-icon-height;
+            background: inherit;
+            transform: rotate(90deg);
+        }
+    }
+
+    &:hover > .inner-close-icon {
+        transform: rotate(135deg);
+    }
+}

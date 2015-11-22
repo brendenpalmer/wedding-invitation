@@ -1,0 +1,65 @@
+//Author: Brenden Palmer
+
+$columns-border-color: rgba(0, 0, 0, .1);;
+
+.responsive-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.col-6, .col-9, .col-3, .col-8, .col-4, .col-7, .col-5 {
+    width: 50%;
+    flex: none;
+    padding: 1em .5em;
+
+    &.v-center {
+        align-self: center;
+    }
+
+    &.border-right {
+        border-right: 1px solid $columns-border-color;
+    }
+
+    &.border-left {
+        border-left: 1px solid $columns-border-color;
+    }
+
+    @media screen and (max-width: 768px) {
+        display: block;
+        width: 100% !important;
+        &.border-left {
+            border: none;
+            border-top: 1px solid $columns-border-color;
+        }
+
+        &.border-right {
+            border: none;
+            border-bottom: 1px solid $columns-border-color;
+        }
+    }
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-3 {
+    width: 25%;
+}

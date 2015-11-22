@@ -1,0 +1,82 @@
+//Author: Brenden Palmer
+
+.text-align-right {
+    text-align: right;
+}
+
+.smaller-text {
+    font-size: 80%;
+}
+
+.gold-color {
+    color: $gold-color;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.text-container {
+    margin: 0 auto;
+
+    &:not(.normal-width) {
+        width: 50%;
+
+        @media screen and (max-width: 768px) {
+            width: 75%;
+        }
+
+        @media screen and (max-width: 469px) {
+            width: 95%;
+        }
+    }
+}
+
+.italic {
+    font-style: italic;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.relative {
+    position: relative;
+}
+
+.m-t {
+    margin-top: 15px;
+}
+
+.m-b {
+    margin-bottom: 15px;
+}
+
+.m-t-xl {
+    margin-top: 30px;
+}
+
+.m-b-xl {
+    margin-bottom: 30px;
+}
+
+.flex {
+    display: flex;
+}
+
+.border-radius-sm {
+    border-radius: .165em;
+}
+
+.italic {
+    font-style: italic;
+}

@@ -1,0 +1,14 @@
+<div
+    class="reception-modal"
+    ng-click="modal.closeModal()"
+    ng-if="modal.modalOpen === true"
+>
+    <div ng-click="modal.closeModal()" class="close-icon larger">
+        <div class="inner-close-icon"></div>
+    </div>
+    <div
+        class="reception-modal-content"
+        ng-click="$event.stopPropagation()"
+        ng-transclude
+    ></div>
+</div>

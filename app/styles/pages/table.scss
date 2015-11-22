@@ -1,0 +1,19 @@
+//Author: Brenden Palmer
+
+.table {
+    .paper-card-container {
+        margin: 1.5em auto;
+        width: 40%;
+        max-width: 40%;
+
+        @media screen and (max-width: 1200px) {
+            width: 50%;
+            max-width: 50%;
+        }
+
+        @media screen and (max-width: 768px) {
+            width: 90%;
+            max-width: 90%;
+        }
+    }
+}

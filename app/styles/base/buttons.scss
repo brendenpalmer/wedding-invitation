@@ -1,0 +1,33 @@
+//Author: Brenden Palmer
+
+$hover-btn-color: #fff;
+
+.button {
+    border: 2px solid $gold-color;
+    outline: none;
+    padding: .5em 1.75em;
+    text-align: center;
+    background: rgba(0, 0, 0, .035);
+    cursor: pointer;
+    font-size: 1.15em;
+    border-radius: .1em;
+    transition: background $default-transition-duration ease, color $default-transition-duration ease;
+    color: $gold-color;
+
+    &:hover,
+    &.button-selected {
+        background: $gold-color;
+        color: $hover-btn-color;
+    }
+
+    &.error {
+        border-color: $error-color;
+        color: $error-color;
+
+        &:hover,
+        &.button-selected {
+            background: $error-color;
+            color: $hover-btn-color;
+        }
+    }
+}

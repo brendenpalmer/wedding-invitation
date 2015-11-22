@@ -1,0 +1,33 @@
+//Author: Brenden Palmer
+
+table {
+    padding: 0;
+    display: block;
+    border: 1px solid $gold-color;
+
+    tr {
+        padding: .5em .75em;
+
+        &:not(:last-of-type),
+        &:first-of-type {
+            border-bottom: 1px solid $gold-color;
+        }
+    }
+
+    thead {
+        background: transparentize($gold-color, .85);
+    }
+
+    thead,
+    th {
+        font-weight: bold;
+    }
+
+    td,
+    th {
+        padding: .5em .75em;
+        &:not(:last-of-type) {
+            border-right: 1px solid $gold-color;
+        }
+    }
+}

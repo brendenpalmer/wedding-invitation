@@ -1,0 +1,34 @@
+//Author: Brenden Palmer
+
+.code {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 2;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    .outer-code-input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex-grow: 2;
+        height: 100%;
+        width: 100vw;
+        padding-top: 80px;
+    }
+
+    label,
+    .styled-input {
+        font-size: 1.5em;
+    }
+
+    p,
+    h2,
+    input {
+        color: $white-color;
+    }
+}

@@ -1,0 +1,10 @@
+/* TEAM */
+	Brenden Palmer
+	Contact: hello@brendenpalmer.com
+	From: San Francisco Bay Area
+
+/* SITE */
+	Last update: 2015/11/22
+	Language: English
+	Doctype: HTML5
+	IDE: WebStorm

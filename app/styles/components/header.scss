@@ -1,0 +1,154 @@
+//Author: Brenden Palmer
+
+.main-nav {
+    background: $main-nav-bg-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: .75em;
+    color: $gold-color;
+    font-size: 1.15em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: $z-index-3;
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .close-icon {
+        display: none;
+        position: fixed;
+        top: 2em;
+        right: 2em;
+        z-index: $z-index-5;
+
+        > .inner-close-icon {
+            background: $white-color;
+        }
+    }
+
+    h1 {
+        font-size: 1.8em;
+        justify-content: flex-start;
+        flex-grow: 2;
+    }
+
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        flex-grow: 2;
+
+        li {
+            margin: 0 .75em;
+            text-align: center;
+        }
+    }
+
+    @media screen and (max-width: 968px) {
+        font-size: 1em;
+        z-index: $z-index-5;
+    }
+
+    @media screen and (max-width: 768px) {
+        .close-icon {
+            display: block;
+        }
+
+        .hamburger-menu {
+            display: flex;
+        }
+
+        ul {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: $modal-bg-color;
+            color: $white-color;
+            backface-visibility: hidden;
+
+            &.hide-mobile-menu {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+            }
+
+            > li {
+                font-size: 1.5em;
+                margin: .25em auto;
+
+                &.nav-list-item-selected > a {
+                    border-color: $white-color;
+                }
+
+                > a {
+                    color: inherit;
+                    border-width: 4px;
+
+                    &:hover {
+                        border-color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.nav-list-item-selected {
+    a {
+        border-color: $gold-color;
+    }
+}
+
+.hamburger-menu {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > .inner-hamburger-menu {
+        width: 100%;
+        height: 3px;
+        position: relative;
+        background: $gold-color;
+
+        &:after,
+        &:before {
+            content: '';
+            background: inherit;
+            position: absolute;
+            top: -10px;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            transition: all $default-transition-duration ease;
+            backface-visibility: hidden;
+        }
+
+        &:after {
+            top: auto;
+            bottom: -10px;
+        }
+    }
+
+    &:hover {
+        > .inner-hamburger-menu {
+            &:before {
+                top: -8px;
+            }
+
+            &:after {
+                bottom: -8px;
+            }
+        }
+    }
+}

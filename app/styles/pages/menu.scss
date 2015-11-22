@@ -1,0 +1,11 @@
+//Author: Brenden Palmer
+
+.menu {
+    overflow: hidden;
+
+    > .menu-info-text {
+        width: 33%;
+        margin: 0 auto;
+        min-width: 280px;
+    }
+}

@@ -1,0 +1,75 @@
+//Author: Brenden Palmer
+
+input {
+    font-size: 1.25em;
+    padding: .35em;
+    border: none;
+    outline: none;
+}
+
+label, input {
+    margin: 0 auto;
+}
+
+.outer-styled-input {
+    padding: .5em;
+    width: 50%;
+    max-width: 600px;
+    min-width: 300px;
+    margin: 0 auto;
+    flex: none;
+
+    .styled-input {
+        flex: none;
+        font-size: 2em;
+        width: 100%;
+        padding: .5em;
+        background: rgba(0, 0, 0, .04);
+        border: 2px solid transparent;
+        border-bottom: 2px solid $gold-color;
+        transition: border $default-transition-duration ease;
+        border-radius: .1em;
+        &.ng-invalid {
+            border: 2px solid $error-color;
+        }
+    }
+}
+
+.styled-input.inline-block {
+    width: 75%;
+}
+
+.button.inline-block {
+    font-size: .8em;
+    width: 20%;
+    margin-left: 5%;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .styled-input.inline-block {
+        width: 70%;
+    }
+
+    .button.inline-block {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .outer-styled-input {
+        width: 94%;
+        max-width: 94%;
+        min-width: 94%;
+    }
+
+    .styled-input.inline-block {
+        width: 68%;
+    }
+
+    .button.inline-block {
+        width: 27%;
+    }
+}

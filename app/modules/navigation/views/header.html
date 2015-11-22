@@ -1,0 +1,68 @@
+<header class="main-nav">
+    <h1>
+        {{ ::header.headerTitle }}
+    </h1>
+
+    <div
+        ng-if="header.view.mobileMenuVisible === true && header.user.isAuthenticated === true"
+        ng-click="header.view.mobileMenuVisible = false" class="close-icon larger"
+    >
+        <div class="inner-close-icon"></div>
+    </div>
+
+    <div
+        ng-if="header.user.isAuthenticated === true"
+        ng-click="header.view.mobileMenuVisible = true" class="hamburger-menu"
+    >
+        <div class="inner-hamburger-menu"></div>
+    </div>
+
+    <ul
+        ng-if="header.user.isAuthenticated === true"
+        ng-class="{
+            'hide-mobile-menu': header.view.mobileMenuVisible === false
+        }"
+    >
+        <li
+            ng-click="header.view.mobileMenuVisible = false"
+            ui-sref-active="nav-list-item-selected"
+            ui-sref="{{ ::header.states.invite }}"
+        >
+            <a>Invitation</a>
+        </li>
+
+        <li
+            ng-if="header.user.isDinnerGuest() === true"
+            ui-sref-active="nav-list-item-selected"
+            ui-sref="{{ ::header.states.table }}"
+            ng-click="header.view.mobileMenuVisible = false"
+        >
+            <a>Table</a>
+        </li>
+
+        <li
+            ng-if="header.user.isDinnerGuest() === true"
+            ng-click="header.view.mobileMenuVisible = false"
+            ui-sref-active="nav-list-item-selected"
+            ui-sref="{{ ::header.states.menu }}"
+        >
+            <a>Menu</a>
+        </li>
+
+        <li
+            ng-click="header.view.mobileMenuVisible = false"
+            ui-sref-active="nav-list-item-selected"
+            ui-sref="{{ ::header.states.accommodations }}"
+        >
+            <a>Accommodations</a>
+        </li>
+
+        <li ng-click="header.view.mobileMenuVisible = false">
+            <a href="mailto:hello@brendenpalmer.com">Contact</a>
+        </li>
+
+        <li ng-click="header.logout(); header.view.mobileMenuVisible = false;">
+            <a>Sign Out</a>
+        </li>
+    </ul>
+</header>

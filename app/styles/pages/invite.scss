@@ -1,0 +1,174 @@
+//Author: Brenden Palmer
+
+.invite {
+    h2 {
+        position: relative;
+        margin: .5em auto 1em;
+        font-size: 3.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: $z-index-2;
+
+        .smaller-text {
+            font-size: 45%;
+            margin-right: 2em;
+        }
+    }
+
+    .year-bg {
+        font-size: 16em;
+        position: absolute;
+        top: -.15em;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        user-select: none;
+        padding: 0;
+        line-height: 1;
+        z-index: $z-index-1;
+
+        > span {
+            display: flex;
+            opacity: .08;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .styled-and-symbol {
+        padding: 0 .5em;
+        border-bottom: 4px solid $gold-color;
+    }
+
+    .groom-name {
+        padding-right: 3em;
+    }
+
+    .groom-name,
+    .bride-name,
+    .styled-and-symbol,
+    .outer-and-symbol-bride {
+        flex-direction: row;
+        align-self: center;
+    }
+
+    .outer-and-symbol-bride {
+        text-align: center;
+        margin: -.5em 0 0;
+        padding: 0;
+    }
+
+    h3 {
+        border-top: 1px solid #eee;
+        padding-top: 1.5em;
+        font-size: .9em;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .25em;
+        margin-bottom: 2em;
+    }
+
+    .responsive-columns {
+        margin: 2.5em auto;
+    }
+
+    .invite-wording {
+        font-size: 1.15em;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .b-c-text {
+        font-size: 2.25em;
+        margin-top: .85em;
+    }
+
+    .outer-rsvp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 2em auto;
+
+        .button {
+            display: flex;
+
+            &:not(:last-of-type) {
+                margin-right: 1em;
+            }
+        }
+    }
+
+    .thanks-for-accepting {
+        margin-bottom: 1em;
+        text-transform: none;
+        letter-spacing: normal;
+        font-size: 1.2em;
+        font-weight: normal;
+    }
+
+    .reception-modal-content {
+        width: 40%;
+        min-width: 300px;
+
+        .invite-wording {
+            overflow: auto;
+        }
+    }
+
+    .paper-card-container {
+        margin: 0 auto;
+        width: 40%;
+        max-width: 40%;
+
+        @media screen and (max-width: 1200px) {
+            width: 50%;
+            max-width: 50%;
+        }
+
+        @media screen and (max-width: 768px) {
+            width: 90%;
+            max-width: 90%;
+        }
+    }
+
+    @media screen and (max-width: 968px) {
+        .year-bg {
+            font-size: 13em;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .year-bg {
+            font-size: 12em;
+        }
+
+        h2 {
+            font-size: 3em;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .year-bg {
+            font-size: 10em;
+        }
+
+        h2 {
+            font-size: 2.5em;
+        }
+    }
+
+    @media screen and (max-width: 380px) {
+        .year-bg {
+            font-size: 8em;
+        }
+
+        .paper-card {
+            height: 750px;
+        }
+    }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="Reception">
+    <head>
+        <base href="/">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title ng-bind="pageTitle"></title>
+
+        <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,300|Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
+
+        <!-- build:css(.tmp) styles.css -->
+        <link rel="stylesheet" href="../bower_components/normalize.css/normalize.css">
+        <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="/styles/main.css">
+        <!-- endbuild -->
+    </head>
+    <body>
+        <div ui-view="header"></div>
+        <div class="main-content" ui-view="main"></div>
+
+        <!-- build:js scripts.js -->
+        <script src="../bower_components/angular/angular.min.js"></script>
+        <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+        <script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+        <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+        <script src="app.js"></script>
+        <script src="constants.js"></script>
+        <script src="modules/api/services/api.js"></script>
+        <script src="modules/utilities/auth/services/auth.service.js"></script>
+        <script src="modules/utilities/request/services/request.service.js"></script>
+        <script src="modules/utilities/local-storage/services/local.storage.service.js"></script>
+
+        <script src="modules/navigation/navigation.states.js"></script>
+        <script src="modules/navigation/controllers/header.js"></script>
+        <script src="modules/navigation/controllers/footer.js"></script>
+
+        <script src="modules/code/code.states.js"></script>
+        <script src="modules/code/services/code.service.js"></script>
+        <script src="modules/code/controllers/code.js"></script>
+
+        <script src="modules/menu/menu.states.js"></script>
+        <script src="modules/menu/constants/menu.constants.js"></script>
+        <script src="modules/menu/controllers/menu.js"></script>
+        <script src="modules/menu/directives/reception.menu.js"></script>
+        <script src="modules/menu/services/menu.service.js"></script>
+
+        <script src="modules/table/table.states.js"></script>
+        <script src="modules/table/controllers/table.js"></script>
+        <script src="modules/table/services/table.service.js"></script>
+        <script src="modules/table/factories/table.factory.js"></script>
+
+        <script src="modules/accommodations/accommodations.states.js"></script>
+        <script src="modules/accommodations/constants/accommodations.constants.js"></script>
+        <script src="modules/accommodations/controllers/accommodations.js"></script>
+
+        <script src="modules/event/factories/event.collection.factory.js"></script>
+
+        <script src="modules/invite/invite.states.js"></script>
+        <script src="modules/invite/constants/invite.constants.js"></script>
+        <script src="modules/invite/services/invite.service.js"></script>
+        <script src="modules/invite/controllers/invite.js"></script>
+
+        <script src="modules/modal/directives/modal.js"></script>
+
+        <script src="modules/user/factories/user.factory.js"></script>
+
+        <script src="../.tmp/templates.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:remove -->
+        <script src="modules/api/services/api.override.js"></script>
+        <!-- endbuild -->
+
+    </body>
+</html>

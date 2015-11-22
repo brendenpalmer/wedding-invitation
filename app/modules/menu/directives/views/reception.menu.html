@@ -1,0 +1,92 @@
+<div
+    class="folding-menu-container"
+    ng-class="{
+        'menu-opened': foldingMenu.view.menuOpened === true
+    }"
+>
+    <div
+        ng-if="foldingMenu.view.menuOpened === true"
+        ng-click="foldingMenu.view.menuOpened = false"
+        class="close-icon"
+    >
+        <div class="inner-close-icon"></div>
+    </div>
+    <div class="menu-left">
+        <div class="menu-front">
+            <div class="text-align-center menu-content">
+                <h1>Restaurant</h1>
+                <a
+                    href="javascript:void(0)"
+                    ng-click="foldingMenu.view.menuOpened = true;"
+                    class="inline-block m-t-xl"
+                >
+                    View the Menu
+                </a>
+                <p class="smaller-text m-t-xl">
+                    Restaurant,<br>
+                    700 Third Avenue,<br>
+                    Seattle, Washington
+                </p>
+                <p class="smaller-text">
+                    <strong>Contact:</strong> <a href="mailto:hello@brendenpalmer.com">hello@brendenpalmer.com</a>
+                </p>
+            </div>
+        </div>
+        <div class="menu-back">
+            <div class="text-align-center menu-content">
+                <h1 class="paper-card-heading">Appetizers</h1>
+                <ul>
+                    <li ng-repeat="appetizer in ::foldingMenu.menuOptions.appetizers track by $index">
+                        <h4>{{ ::appetizer.name }}</h4>
+                        {{ ::appetizer.description }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="menu-center">
+        <div class="text-align-center menu-content">
+            <h1 class="paper-card-heading">Entrées</h1>
+            <ul>
+                <li
+                    ng-repeat="entree in foldingMenu.entrees track by $index"
+                    ng-click="foldingMenu.entreeSelectedCallback(entree)"
+                    class="selectable-option"
+                    ng-class="{
+                        'menu-item-selected': foldingMenu.userSelectedEntree && foldingMenu.userSelectedEntree.id === entree.id
+                    }"
+                >
+                    <h4>{{ ::entree.name }}</h4>
+                    {{ ::entree.description }}
+                </li>
+            </ul>
+
+            <h1 class="paper-card-heading">Wine</h1>
+            <ul>
+                <li ng-repeat="wineType in ::foldingMenu.menuOptions.wine track by $index">
+                    {{ ::wineType }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="menu-right">
+        <div class="menu-back">
+            <div class="text-align-center menu-content">
+                <h1 class="paper-card-heading">Dessert</h1>
+                <ul>
+                    <li ng-repeat="dessert in ::foldingMenu.menuOptions.dessert track by $index">
+                        <h4>{{ ::dessert.name }}</h4>
+                        {{ ::dessert.description }}
+                    </li>
+                </ul>
+
+                <h1 class="paper-card-heading">Non-alcoholic beverages</h1>
+                <ul>
+                    <li ng-repeat="beverage in ::foldingMenu.menuOptions.otherBeverages track by $index">
+                       {{ ::beverage }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
