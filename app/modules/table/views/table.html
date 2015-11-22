@@ -9,7 +9,7 @@
             <p class="text-align-center" ng-if="table.loading === true">
                 Loading...
             </p>
-            
+
             <ul ng-if="table.loading === false">
                 <li ng-repeat="seat in table.seats track by table.trackSeat(seat, $index)">{{ ::seat.name }}{{ ::seat.isAttending != 1 ? ' *' : '' }}</li>
             </ul>

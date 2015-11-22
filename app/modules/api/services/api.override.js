@@ -11,6 +11,6 @@
             ApiService
         ) {
             //Override the API URL for local development
-            ApiService.setApiUrl('http://10.0.0.42:8000');
+            ApiService.setApiUrl('http://localhost:8000');
         });
 })();
