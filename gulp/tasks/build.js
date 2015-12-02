@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp');
 var usemin = require('gulp-usemin');
 var uglify = require('gulp-uglify');
@@ -9,8 +11,6 @@ var del = require('del');
 var templateCache = require('gulp-angular-templatecache');
 var concat = require('gulp-concat');
 var ngAnnotate = require('gulp-ng-annotate');
-
-'use strict';
 
 gulp.task('clean:dist', function () {
     del('build');
