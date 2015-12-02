@@ -1,8 +1,8 @@
 'use strict';
 
-var config       = require('../config');
-var gulp         = require('gulp');
-var sass         = require('gulp-sass');
+var config = require('../config');
+var gulp = require('gulp');
+var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var minifyCss = require('gulp-minify-css');
 
