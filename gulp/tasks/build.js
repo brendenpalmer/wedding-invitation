@@ -35,7 +35,7 @@ gulp.task('usemin', function() {
 });
 
 gulp.task('templates', function () {
-    gulp.src('app/modules/**/*.html')
+    return gulp.src('app/modules/**/*.html')
         .pipe(minifyHtml({
             empty: true,
             spare: true,
